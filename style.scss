@@ -1,0 +1,48 @@
+// small reset
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  // center the .container element in body
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  height: 100vh; // take full height of the avaiblable screen
+  background: #fefefe; 
+}
+
+// container that contains the draggables
+.container {
+  background: #f1f1f1;
+  width: 400px;
+  padding: 1rem;
+  
+  // disable selection
+  user-select: none; // very important, otherwise you can select multiple draggables
+}
+
+// draggable item
+.draggable {
+  padding: 1rem;
+  background: #fff;
+  
+  // every draggable except the last one
+  &:not(:last-child) {
+    margin-bottom: 1rem;
+  }
+  
+  // draggable dragging state
+  &--dragging {
+    opacity: 0.3;
+  }
+  
+  // empty draggable (placeholder)
+  &--empty {
+    height: 60px;
+    opacity: .5;
+  }
+}
